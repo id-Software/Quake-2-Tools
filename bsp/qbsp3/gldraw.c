@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include <windows.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
-#include <GL/glaux.h>
+#include <GL/freeglut.h>
 
 #include "qbsp.h"
 
@@ -38,9 +38,10 @@ vec3_t	draw_mins, draw_maxs;
 
 void InitWindow (void)
 {
-    auxInitDisplayMode (AUX_SINGLE | AUX_RGB);
-    auxInitPosition (0, 0, WIN_SIZE, WIN_SIZE);
-    auxInitWindow ("qcsg");
+    glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowPosition (0, 0);
+	glutInitWindowSize(WIN_SIZE, WIN_SIZE);
+    glutCreateWindow ("qcsg");
 }
 
 void Draw_ClearWindow (void)
