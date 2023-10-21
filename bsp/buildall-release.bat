@@ -1,0 +1,5 @@
+NMAKE /f "bsp.mak" I="./freeglut" CFG="bsp - Win32 Release"
+NMAKE /f "bsp.mak" I="./freeglut" CFG="qbsp3 - Win32 Release"
+NMAKE /f "bsp.mak" I="./freeglut" CFG="qvis3 - Win32 Release"
+NMAKE /f "bsp.mak" I="./freeglut" CFG="qrad3 - Win32 Release"
+NMAKE /f "bsp.mak" I="./freeglut" CFG="bspinfo3 - Win32 Release"
