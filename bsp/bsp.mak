@@ -8,6 +8,8 @@ CFG=bspinfo3 - Win32 Debug
 !MESSAGE No configuration specified.  Defaulting to bspinfo3 - Win32 Debug.
 !ENDIF 
 
+!MESSAGE value of cfg $(CFG)
+
 !IF "$(CFG)" != "bsp - Win32 Release" && "$(CFG)" != "bsp - Win32 Debug" &&\
  "$(CFG)" != "qbsp3 - Win32 Release" && "$(CFG)" != "qbsp3 - Win32 Debug" &&\
  "$(CFG)" != "qvis3 - Win32 Release" && "$(CFG)" != "qvis3 - Win32 Debug" &&\
@@ -86,8 +88,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:no /pdb:"$(OUTDIR)/bsp.pdb" /machine:I386\
@@ -134,8 +136,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:yes /pdb:"$(OUTDIR)/bsp.pdb" /debug\
@@ -203,8 +205,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:no /pdb:"$(OUTDIR)/qbsp3.pdb" /debug\
@@ -299,8 +301,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:yes /pdb:"$(OUTDIR)/qbsp3.pdb" /debug\
@@ -379,8 +381,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:no /pdb:"$(OUTDIR)/qvis3.pdb" /debug\
@@ -449,8 +451,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:yes /pdb:"$(OUTDIR)/qvis3.pdb" /debug\
@@ -520,8 +522,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:no /pdb:"$(OUTDIR)/qrad3.pdb" /debug\
@@ -598,8 +600,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:yes /pdb:"$(OUTDIR)/qrad3.pdb" /debug\
@@ -667,8 +669,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:no /pdb:"$(OUTDIR)/bspinfo3.pdb" /debug\
@@ -734,8 +736,8 @@ BSC32_SBRS= \
 	
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-# ADD LINK32 wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
-LINK32_FLAGS=wsock32.lib opengl32.lib glaux.lib glu32.lib kernel32.lib\
+# ADD LINK32 wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386
+LINK32_FLAGS=wsock32.lib opengl32.lib freeglut.lib glu32.lib kernel32.lib\
  user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib\
  ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo\
  /subsystem:console /incremental:yes /pdb:"$(OUTDIR)/bspinfo3.pdb" /debug\
@@ -909,7 +911,7 @@ SOURCE=.\qbsp3\gldraw.c
 DEP_CPP_GLDRA=\
 	".\qbsp3\qbsp.h"\
 	{$(INCLUDE)}"\gl\GL.H"\
-	{$(INCLUDE)}"\gl\GLAUX.H"\
+	{$(INCLUDE)}"\gl\freeglut.H"\
 	{$(INCLUDE)}"\gl\GLU.H"\
 	
 
@@ -929,7 +931,7 @@ DEP_CPP_GLDRA=\
 	"..\common\threads.h"\
 	".\qbsp3\qbsp.h"\
 	{$(INCLUDE)}"\gl\GL.H"\
-	{$(INCLUDE)}"\gl\GLAUX.H"\
+	{$(INCLUDE)}"\gl\freeglut.H"\
 	{$(INCLUDE)}"\gl\GLU.H"\
 	
 
