@@ -1,16 +1,28 @@
 workspace "RionTools"
    configurations { "Debug", "Release" }
-   includedirs { "../freeglut300/include", "../common" }
-   libdirs { "../freeglut300/lib" }
-   links { "opengl32", "freeglut" }
+   defines {"WIN32"}
+   includedirs { "../freeglut/include", "../common" }
+   libdirs { "../freeglut/lib" }
+   links { 
+      "wsock32", 
+      "opengl32", 
+      "freeglut",  
+      "glu32",  
+      "kernel32", 
+      "user32",  
+      "gdi32",  
+      "winspool",  
+      "comdlg32",  
+      "advapi32",  
+      "shell32", 
+      "ole32",  
+      "oleaut32",  
+      "uuid",  
+      "odbc32",  
+      "odbccp32", 
+    }
    linkoptions { "/FORCE:MULTIPLE" }
    defines { "_CRT_SECURE_NO_WARNINGS" }
-
-project "qcommon"
-   files { "../common/**.h", "../common/**.c" }
-   kind "StaticLib"
-   language "C"
-   cdialect "C89"
 
 project "bspinfo3"
    kind "ConsoleApp"
@@ -18,9 +30,12 @@ project "bspinfo3"
    cdialect "C89"
    targetdir "bin/%{cfg.buildcfg}"
 
-   links { "qcommon" }
-
-   files { "bspinfo3/**.h", "bspinfo3/**.c" }
+   files {
+      "../common/**.h", 
+      "../common/**.c",
+      "bspinfo3/**.h", 
+      "bspinfo3/**.c" 
+   }
 
    filter "configurations:Debug"
       defines { "DEBUG" }
@@ -37,9 +52,15 @@ project "qbsp3"
    cdialect "C89"
    targetdir "bin/%{cfg.buildcfg}"
 
-   links { "qcommon" }
-
-   files { "qbsp3/**.h", "qbsp3/**.c" }
+   files { 
+      "../common/**.h", 
+      "../common/**.c",
+      "qbsp3/**.h", 
+      "qbsp3/**.c" 
+   }
+   removefiles {
+      "qbsp3/gldraw.c"
+   }
 
    filter "configurations:Debug"
       defines { "DEBUG" }
@@ -54,9 +75,12 @@ project "qrad3"
    language "C"
    targetdir "bin/%{cfg.buildcfg}"
 
-   links { "qcommon" }
-
-   files { "qrad3/**.h", "qrad3/**.c" }
+   files {
+      "../common/**.h", 
+      "../common/**.c", 
+      "qrad3/**.h", 
+      "qrad3/**.c" 
+   }
 
    filter "configurations:Debug"
       defines { "DEBUG" }
@@ -71,9 +95,12 @@ project "qvis3"
    language "C"
    targetdir "bin/%{cfg.buildcfg}"
 
-   links { "qcommon" }
-
-   files { "qvis3/**.h", "qvis3/**.c" }
+   files { 
+      "../common/**.h", 
+      "../common/**.c",
+      "qvis3/**.h", 
+      "qvis3/**.c" 
+   }
 
    filter "configurations:Debug"
       defines { "DEBUG" }
