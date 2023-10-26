@@ -1,28 +1,35 @@
 workspace "RionTools"
    configurations { "Debug", "Release" }
-   defines {"WIN32"}
-   includedirs { "../freeglut/include", "../common" }
-   libdirs { "../freeglut/lib" }
+   
+   includedirs { "../common" }
+   files {
+      "../common/**.h", 
+      "../common/**.c",
+   }
+
+   filter "system:windows"
+      defines {"WIN32"}
+   
    links { 
-      "wsock32", 
       "opengl32", 
-      "freeglut",  
-      "glu32",  
-      "kernel32", 
-      "user32",  
-      "gdi32",  
-      "winspool",  
-      "comdlg32",  
-      "advapi32",  
-      "shell32", 
-      "ole32",  
-      "oleaut32",  
-      "uuid",  
-      "odbc32",  
-      "odbccp32", 
-    }
+      "glu32",   
+   }
+   filter "system:linux"
+      links {
+         "m"
+      }
+   
    linkoptions { "/FORCE:MULTIPLE" }
    defines { "_CRT_SECURE_NO_WARNINGS" }
+
+   filter "configurations:Debug"
+      defines { "DEBUG" }
+      symbols "On"
+
+   filter "configurations:Release"
+      defines { "NDEBUG" }
+      optimize "On"
+   
 
 project "bspinfo3"
    kind "ConsoleApp"
@@ -31,20 +38,9 @@ project "bspinfo3"
    targetdir "bin/%{cfg.buildcfg}"
 
    files {
-      "../common/**.h", 
-      "../common/**.c",
       "bspinfo3/**.h", 
       "bspinfo3/**.c" 
    }
-
-   filter "configurations:Debug"
-      defines { "DEBUG" }
-      symbols "On"
-
-   filter "configurations:Release"
-      defines { "NDEBUG" }
-      optimize "On"
-
 
 project "qbsp3"
    kind "ConsoleApp"
@@ -53,22 +49,14 @@ project "qbsp3"
    targetdir "bin/%{cfg.buildcfg}"
 
    files { 
-      "../common/**.h", 
-      "../common/**.c",
       "qbsp3/**.h", 
       "qbsp3/**.c" 
    }
-   removefiles {
-      "qbsp3/gldraw.c"
-   }
 
-   filter "configurations:Debug"
-      defines { "DEBUG" }
-      symbols "On"
-
-   filter "configurations:Release"
-      defines { "NDEBUG" }
-      optimize "On"
+   filter "system:windows"
+      removefiles {
+         "qbsp3/gldraw.c"
+      }
 
 project "qrad3"
    kind "ConsoleApp"
@@ -76,19 +64,9 @@ project "qrad3"
    targetdir "bin/%{cfg.buildcfg}"
 
    files {
-      "../common/**.h", 
-      "../common/**.c", 
       "qrad3/**.h", 
       "qrad3/**.c" 
    }
-
-   filter "configurations:Debug"
-      defines { "DEBUG" }
-      symbols "On"
-
-   filter "configurations:Release"
-      defines { "NDEBUG" }
-      optimize "On"
 
 project "qvis3"
    kind "ConsoleApp"
@@ -96,16 +74,10 @@ project "qvis3"
    targetdir "bin/%{cfg.buildcfg}"
 
    files { 
-      "../common/**.h", 
-      "../common/**.c",
       "qvis3/**.h", 
       "qvis3/**.c" 
    }
+   removefiles {
+      "../common/polylib.c"
+   }
 
-   filter "configurations:Debug"
-      defines { "DEBUG" }
-      symbols "On"
-
-   filter "configurations:Release"
-      defines { "NDEBUG" }
-      optimize "On"
